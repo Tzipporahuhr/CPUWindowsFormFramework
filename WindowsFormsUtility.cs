@@ -18,7 +18,7 @@ namespace CPUWindowsFormFramework
         }
 
 
-        public static void SetControlBinding(Control ctrl, DataTable dt)
+        public static void SetControlBinding(Control ctrl, BindingSource bindsource)
         {
             string propertyname = "";
 
@@ -39,7 +39,7 @@ namespace CPUWindowsFormFramework
 
 
             if (propertyname != "" && columnname != "")
-                ctrl.DataBindings.Add(propertyname, dt, columnname, true, DataSourceUpdateMode.OnPropertyChanged);
+                ctrl.DataBindings.Add(propertyname, bindsource, columnname, true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         public static void FormatGridForSearchResults(DataGridView grid)
@@ -50,6 +50,9 @@ namespace CPUWindowsFormFramework
             grid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
-      
+        public static void SetControlBinding(TextBox txtNum, object bindsource, object president)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
